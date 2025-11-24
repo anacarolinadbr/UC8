@@ -256,7 +256,14 @@ public class TelaLuta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHabilidadeActionPerformed
 
     private void btnItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemActionPerformed
-      
+       //Vai escolher o item ou de vida ou de mana
+        Item item = GerarItem.gerarItensAtributos();
+
+        //Jogador vai poder usar
+        String usadoItem = jogador.usarItem(item);
+
+        textoTela.append(usadoItem + "\n");
+        atualizarBarras();
     }//GEN-LAST:event_btnItemActionPerformed
 
     private void btnFugirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFugirActionPerformed
@@ -274,7 +281,7 @@ public class TelaLuta extends javax.swing.JFrame {
 
             atualizarBarras();
             fimBatalha();
-        } else { JOptionPane.showMessageDialog(this, "Você escapou!");
+        } else { JOptionPane.showMessageDialog(this, "Você escapou");
             this.dispose();
         }
     }//GEN-LAST:event_btnFugirActionPerformed
@@ -296,7 +303,7 @@ public class TelaLuta extends javax.swing.JFrame {
     bonusForcaTurno = Dados.rolar(1, 6);
     bonusAgilidadeTurno = Dados.rolar(1, 4);
 
-    //append("texto") adiciona no final
+    
     textoTela.append("Dados do turno: ");
     textoTela.append("Bônus de Força: + " + bonusForcaTurno);
     textoTela.append("Bônus de Agilidade: + " + bonusAgilidadeTurno);
@@ -331,7 +338,6 @@ public class TelaLuta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtacarActionPerformed
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        // textoTela.setText(""); // limpa
         textoTela.append("Um Inimigo apareceu \n");
         textoTela.append("Gire o dado para começar o combate \n");
         atualizarBarras();

@@ -9,7 +9,7 @@ package com.mycompany.trabalhoRPG;
  * @author sesia
  */
 public class Dados {
-    // Vai rolar os lado e qa quantidade
+    // Vai rolar os lado e quantidade
     //Soma no final
     public static int rolar(int quantidade, int lados) {
         int total = 0;

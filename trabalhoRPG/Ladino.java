@@ -20,7 +20,7 @@ public class Ladino extends Personagem {
         //Com os 70 de chance o perosnagem vai escapar 
         if (sorte <= 70) {
             inimigo.vida = 0;
-            return nome + " usa evasao e escapa do combate!";
+            return nome + " usa evasao e escapa do combate";
         } else {
             int dano = (forca + Dados.rolar(1, 6)) / 2;
             inimigo.vida -= dano;

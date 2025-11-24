@@ -17,10 +17,12 @@ public class Barbaro extends Personagem {
    
    //RN15: Habilidade Fúria aumenta o dano físico em 50% por um turno (custa 1 de mana).
     public String usarHabilidade(Personagem inimigo) {
-        //Vai diminuir a mana
+        //Vai verificar se tem mana suficiente e depois tirar essa amna para usar a habilidade
         if (this.mana >= 1) {
             this.mana -= 1;
-            int dano = (int)((this.forca + Dados.rolar(1, 6)) * 1.5);
+        //Pega a força do barbaro, soma com um dado de 6 lados e vai multiplicar por 1,5
+        int dano = (int)((this.forca + Dados.rolar(1, 6)) * 1.5);
+        //Int para virar número inteiro
             inimigo.vida -= dano;
             return nome + " entra em FÚRIA e causa " + dano + " de dano!";
         } else {

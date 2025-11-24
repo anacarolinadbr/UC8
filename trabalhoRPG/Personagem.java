@@ -84,6 +84,23 @@ public abstract class Personagem {
         }
     }
     
+        public String usarItem(Item item) {
+        String log = getNome() + " usou " + item.getNome() + "! ";
+
+        if (item.getcurarVida() > 0) {
+            this.vida += item.getcurarVida();
+            log += "Recuperou " + item.getcurarVida() + " de vida. ";
+        }
+
+        if (item.getaumentarMana() > 0) {
+            this.mana += item.getaumentarMana();
+            log += "Recuperou " + item.getaumentarMana() + " de mana. ";
+        }
+
+
+        return log;
+    }
+
    
     
      // Para ver se os personagens estão vivos
